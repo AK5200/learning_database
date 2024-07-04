@@ -15,17 +15,17 @@
     <% users.forEach( (user)=> { %>
 
         
-    <div class="user ml-2 ml-2 card w-56 h-72 bg-zinc-800 rounded-md">
+    <div class="user ml-2 ml-2 card w-56 h-76 bg-zinc-800 rounded-md">
         <div class=" cursor-pointer p-3 ">
             <div class="image w-full h-40  bg-white overflow-hidden">
-             <img class="w-full h-full object-coevr" src="<%= user.image %>" alt="">
+             <img class="w-full h-full object-cover object-top" src=<%= user.image %> alt="">
             </div>
-            <h2 class="pt-1 text-xl"><%= user.name %></h2>
+            <h2 class="pt-1 text-xl overflow-hidden"><%= user.name %></h2>
             <h4 class="text-sm text-zinc-500"><%= user.email %></h4>
             
-            <div class="methods flex justify-between mt-6">
-                <a class="">Edit User</a>
-                <a class="text-red-500 hover:text-red-600">Delete User</a>
+            <div class="methods flex justify-between">
+                <a href="/edit/<%= user._id %>">Edit User</a>
+                <a class="text-red-500 hover:text-red-600" href="/delete/<%= user._id %>">Delete User</a>
             </div>
         </div>
     </div>
